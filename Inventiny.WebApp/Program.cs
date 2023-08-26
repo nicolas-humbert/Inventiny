@@ -1,4 +1,6 @@
 using InMemory;
+using Inventiny.UseCases.Inventories;
+using Inventiny.UseCases.Inventories.Interfaces;
 using Inventiny.UseCases.PluginInterfaces;
 using Inventiny.WebApp.Data;
 
@@ -9,6 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
+builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>();
 
 
 var app = builder.Build();

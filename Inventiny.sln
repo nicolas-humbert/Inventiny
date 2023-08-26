@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventiny.UseCases", "Inven
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventiny.CoreBusiness", "Inventiny.CoreBusiness\Inventiny.CoreBusiness.csproj", "{B6329DC4-CCD8-47D9-B8F8-01122DF23BB1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventiny.Plugins", "Inventiny.Plugins", "{1332FC3C-87D1-4241-9DB1-BE1E92767790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory", "Inventiny.Plugins\InMemory\InMemory.csproj", "{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{B6329DC4-CCD8-47D9-B8F8-01122DF23BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6329DC4-CCD8-47D9-B8F8-01122DF23BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6329DC4-CCD8-47D9-B8F8-01122DF23BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6FA14A13-7AE2-4824-AFD0-FBEF2539DBBB} = {1332FC3C-87D1-4241-9DB1-BE1E92767790}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12C94776-1A93-4E29-9902-EA6C51E2473E}

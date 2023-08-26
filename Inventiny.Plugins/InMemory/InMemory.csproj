@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Inventiny.UseCases\Inventiny.UseCases.csproj" />
+  </ItemGroup>
+
 </Project>
