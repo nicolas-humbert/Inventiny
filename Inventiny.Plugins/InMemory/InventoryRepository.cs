@@ -17,6 +17,25 @@ namespace InMemory
                 new Inventory() { InventoryId = 4, InventoryName = "Bike Pedels", Quantity = 20, Price= 1},
             };
         }
+
+        public Task AddInventoryAsync(Inventory inventory)
+        {
+            var maxId = _inventories.Max(x => x.InventoryId);
+            inventory.InventoryId = maxId + 1;
+
+            _inventories.Add(inventory);
+
+            return Task.CompletedTask;
+        }
+
+        public Task<bool> ExistsAsync(Inventory inventory)
+        {
+            if (_inventories.Any(x => x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
+                return Task.FromResult(true);
+
+            return Task.FromResult(false);
+        }
+
         public async Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return await Task.FromResult(_inventories);
