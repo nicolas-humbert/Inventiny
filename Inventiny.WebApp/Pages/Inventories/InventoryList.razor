@@ -1,0 +1,22 @@
+﻿@using Inventiny.WebApp.Controls
+
+@page "/inventories"
+
+<h3>Inventory List</h3>
+
+<br />
+
+<SearchInventoryComponent
+    OnSearchInventory="OnInventorySearch"
+/>
+
+Search Term : @searchTerm
+
+@code {
+    private string searchTerm = String.Empty;
+
+    private void OnInventorySearch(string searchTerm)
+    {
+        this.searchTerm = searchTerm;
+    }
+}
