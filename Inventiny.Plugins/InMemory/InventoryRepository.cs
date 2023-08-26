@@ -42,5 +42,36 @@ namespace InMemory
 
             return _inventories.Where(x => x.InventoryName.Contains(name, StringComparison.OrdinalIgnoreCase));
         }
+
+        public async Task<Inventory> GetInventoryByIdAsync(int id)
+        {
+            var inv = _inventories.First(x => x.InventoryId == id);
+
+            var temporaryInv = new Inventory()
+            {
+                InventoryId = inv.InventoryId,
+                InventoryName = inv.InventoryName,
+                Quantity = inv.Quantity,
+                Price = inv.Price,
+            };
+
+            return await Task.FromResult(temporaryInv);
+        }
+
+        public Task UpdateInventoryAsync(Inventory inventory)
+        {
+            if (_inventories.Any(x => x.InventoryId != inventory.InventoryId && x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
+                return Task.CompletedTask;
+
+            var inv = _inventories.FirstOrDefault(x => x.InventoryId == inventory.InventoryId);
+            if (inv != null)
+            {
+                inv.InventoryName = inventory.InventoryName;
+                inv.Quantity = inventory.Quantity;
+                inv.Price = inventory.Price;
+            }
+
+            return Task.CompletedTask;
+        }
     }
 }
